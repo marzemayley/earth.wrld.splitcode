@@ -1,0 +1,44 @@
+import time
+import random
+
+class EarthWRLD:
+    def __init__(self, name):
+        self.name = name
+        self.status = "inactive"
+        self.diagnostics = False
+
+    def display_startup_message(self):
+        print(f"Initializing {self.name}...")
+        time.sleep(1)
+
+    def power_on(self):
+        print("Powering on...")
+        time.sleep(1)
+        self.status = "active"
+        print(f"{self.name} is now active.")
+
+    def run_diagnostics(self):
+        print("Running startup diagnostics...")
+        time.sleep(2)
+        # Simulate diagnostics check
+        success = random.choice([True, True, True, False])  # 75% chance of success
+        if success:
+            self.diagnostics = True
+            print("Diagnostics passed successfully!")
+        else:
+            self.diagnostics = False
+            print("Diagnostics failed. Please check the system.")
+
+    def boot_sequence(self):
+        self.display_startup_message()
+        self.power_on()
+        self.run_diagnostics()
+
+        if self.diagnostics:
+            print(f"{self.name} has successfully completed the boot sequence!")
+        else:
+            print(f"{self.name} encountered issues during boot. Please resolve them before proceeding.")
+
+if __name__ == "__main__":
+    earthwrld = EarthWRLD("EarthWRLD")
+    earthwrld.boot_sequence()
