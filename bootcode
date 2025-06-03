@@ -2,9 +2,9 @@ import time
 import random
 
 class EarthWRLD:
-    def __init__(self, name):
-        self.name = name
-        self.status = "inactive"
+    def __init__(self.name):
+        self.name = Pineobro
+        self.status = "active"
         self.diagnostics = False
 
     def display_startup_message(self):
