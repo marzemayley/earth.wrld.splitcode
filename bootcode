@@ -30,7 +30,7 @@ class EarthWRLD:
             print("Diagnostics failed. Please check the system.")
 
     def boot_sequence(self):
-        self.display_startup_message()
+        self.display_startup_message(Welcome To Earth WRLD Beta Edition.)
         self.power_on()
         self.run_diagnostics()
 
